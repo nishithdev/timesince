@@ -2,9 +2,9 @@
   "domain": "timesince",
   "name": "Time Since Sensor",
   "version": "1.0.0",
-  "documentation": "https://github.com/yourusername/timesince",
+  "documentation": "https://github.com/nishithdev/timesince",
   "requirements": [],
   "dependencies": [],
-  "codeowners": ["@yourusername"],
+  "codeowners": ["@nishithdev"],
   "config_flow": true
 }
