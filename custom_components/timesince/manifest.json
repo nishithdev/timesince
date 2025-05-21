@@ -6,5 +6,6 @@
   "requirements": [],
   "dependencies": [],
   "codeowners": ["@nishithdev"],
-  "config_flow": true
+  "config_flow": true,
+  "translations": "translations"
 }

@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "reason": "Reason",
+          "date": "Target Date (YYYY-MM-DD)",
+          "mode": "Mode"
+        },
+        "description": "Set up a time sensor for past or future tracking.",
+        "title": "Time Since Configuration"
+      }
+    },
+    "error": {
+      "date_in_future_for_since": "Date cannot be in the future for 'since' mode.",
+      "date_in_past_for_countdown": "Date cannot be in the past for 'countdown' mode.",
+      "invalid_date": "Please enter a valid date in YYYY-MM-DD format."
+    }
+  }
+}
