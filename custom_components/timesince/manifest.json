@@ -1,0 +1,10 @@
+{
+  "domain": "timesince",
+  "name": "Time Since Sensor",
+  "version": "1.0.0",
+  "documentation": "https://github.com/yourusername/timesince",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@yourusername"],
+  "config_flow": true
+}
