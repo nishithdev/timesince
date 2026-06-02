@@ -1,0 +1,12 @@
+reset_to_today:
+  name: Reset to Today
+  description: Resets the tracked date of a Time Since sensor to today's date. Useful for habit or streak tracking.
+  fields:
+    entity_id:
+      name: Entity
+      description: The Time Since sensor to reset.
+      required: true
+      selector:
+        entity:
+          domain: sensor
+          integration: timesince

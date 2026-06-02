@@ -6,7 +6,7 @@
         "description": "Set up a time sensor for past or future tracking.",
         "data": {
           "reason": "Reason",
-          "start_date": "Target Date (YYYY-MM-DD)",
+          "start_date": "Target Date",
           "mode": "Mode"
         }
       }
@@ -14,22 +14,37 @@
     "error": {
       "date_in_future_for_since": "Date cannot be in the future for 'since' mode.",
       "date_in_past_for_countdown": "Date cannot be in the past for 'countdown' mode.",
-      "invalid_date": "Please enter a valid date in YYYY-MM-DD format."
+      "invalid_date": "Please enter a valid date."
     }
   },
   "options": {
     "step": {
       "init": {
-        "title": "Update Target Date",
+        "title": "Update Sensor",
+        "description": "Edit the sensor's reason, date, or mode.",
         "data": {
-          "start_date": "Target Date (YYYY-MM-DD)"
+          "reason": "Reason",
+          "start_date": "Target Date",
+          "mode": "Mode"
         }
       }
     },
     "error": {
       "date_in_future_for_since": "Date cannot be in the future for 'since' mode.",
       "date_in_past_for_countdown": "Date cannot be in the past for 'countdown' mode.",
-      "invalid_date": "Please enter a valid date in YYYY-MM-DD format."
+      "invalid_date": "Please enter a valid date."
+    }
+  },
+  "services": {
+    "reset_to_today": {
+      "name": "Reset to Today",
+      "description": "Resets the tracked date of a Time Since sensor to today's date.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "The Time Since sensor to reset."
+        }
+      }
     }
   }
 }
