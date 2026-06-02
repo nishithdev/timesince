@@ -1,7 +1,6 @@
 {
-    "name": "since then gh versiion",
+    "name": "Time Since Sensor",
     "content_in_root": false,
-    "domains": ["sincethen"],
-    "country": "US",
+    "domains": ["timesince"],
     "homeassistant": "2023.0.0"
   }
