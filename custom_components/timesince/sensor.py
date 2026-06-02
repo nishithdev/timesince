@@ -1,5 +1,5 @@
 from datetime import date
-from homeassistant.components.sensor import SensorEntity, SensorStateClass
+from homeassistant.components.sensor import SensorDeviceClass, SensorEntity, SensorStateClass
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import UnitOfTime
 from homeassistant.core import HomeAssistant
@@ -16,6 +16,7 @@ async def async_setup_entry(
 
 class TimeSinceSensor(SensorEntity):
     _attr_icon = "mdi:calendar-clock"
+    _attr_device_class = SensorDeviceClass.DURATION
     _attr_state_class = SensorStateClass.MEASUREMENT
     _attr_native_unit_of_measurement = UnitOfTime.DAYS
 
@@ -28,11 +29,18 @@ class TimeSinceSensor(SensorEntity):
         self._target_date = date.fromisoformat(
             entry.options.get(CONF_DATE, entry.data[CONF_DATE])
         )
+        self._cached_delta: int | None = self._compute_delta()
 
-    def _delta_days(self) -> int | None:
+    def _compute_delta(self) -> int | None:
         today = dt_util.now().date()
         delta = (today - self._target_date).days if self._mode == "since" else (self._target_date - today).days
         return delta if delta >= 0 else None
+
+    def update(self) -> None:
+        self._cached_delta = self._compute_delta()
+
+    def _delta_days(self) -> int | None:
+        return self._cached_delta
 
     def _next_milestone(self, delta: int) -> tuple[int, int] | None:
         milestones = MILESTONES_SINCE if self._mode == "since" else MILESTONES_COUNTDOWN
